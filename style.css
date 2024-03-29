@@ -1,0 +1,361 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+html , body{
+    background-color: #222831;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.container
+{
+    height: 100%;
+    width: 100%;
+    /* background-color: #25c209; */
+    padding: 1px;
+}
+.popup
+{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    position: absolute;
+    background-color: #393e46;
+    color: rgb(255, 255, 255);
+    padding: 15px 10px;
+    border-radius: 10px;
+    left: 50%;
+    transform: translateY(-100%) translateX(-50%) scale(0);
+    z-index: 2;
+    transition: all 1s;
+    cursor: default;
+    /* display: none; */
+    border: 2px solid #1f2123;
+}
+.popup-move
+{
+    left: 50%;
+    transform: translateY(50%) translateX(-50%) scale(1.2);
+}
+.popup > p 
+{
+    cursor: no-drop;
+    font-size: 1.5rem;
+    font-weight: 300;
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+.popup > input
+{
+    outline: none;
+    border: none;
+    font-size: 1.3rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+    background-color:#b6b6b6;
+}
+.popup > input[type="date"]
+{
+    cursor: pointer;
+}
+.popup  span
+{
+    /* color: rgb(233, 10, 10); */
+    font-size: 1rem;
+    font-weight: 300;
+}
+.popup > button
+{
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: rgb(214, 12, 12);
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.popup > button:hover
+{
+    background-color: rgba(214, 12, 12, 0.781);
+}
+.card
+{
+    background-color: #393e46;
+    color: #ffffff;
+    margin-top: 13vh;
+    margin-inline:auto;
+    padding:25px 35px;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 10px;
+    transition:   all .2s;
+    position: relative;
+    box-shadow: 0px 0px 15px 3px #6271c76e;
+}
+.card:hover
+{
+    /* transform: scale(1.01);
+    box-shadow: 7px 10px 20px rgb(0, 0, 0); */
+    background-color:#353a42;
+    border: 1px solid rgb(255, 242, 0);
+}
+.card:hover .title
+{
+    border-bottom: 3px solid rgb(255, 242, 0);
+}
+.card:hover #exclamation
+{
+    color: red;
+}
+.card:hover #head
+{
+    color:#8e8e8e;
+}
+.title
+{
+    /* background-color: aqua; */
+    border-bottom: 2px solid #222831;
+    transition: all .3s;
+}
+#exclamation
+{
+    transition: all .3s;
+}
+.title > h1
+{
+    font-family: "Roboto", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+.time
+{
+    padding: 30px;
+    transition: all 2s;
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    font-size: 2rem;
+    font-weight: 500;
+    font-style: italic;
+    color:#8796ef;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px dotted #737ebe;
+    overflow: hidden;
+}
+.marker
+{
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.258);
+    width: 100%;
+    /* height: 20%; */
+    top: 0;
+}
+.quiz
+{
+    padding-top: 20px;
+    /* background-color: rgb(30, 255, 0); */
+}
+.quiz > h2
+{
+    font-size: 1.8rem;
+    font-weight: 400;
+    cursor: not-allowed;
+    user-select: none;
+}
+.options
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+}
+.choice
+{
+    width: 100%;
+    background-color:#5d6269;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 350;
+    text-align: start;
+    border-radius: 5px;
+    border: 1px solid #565264;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.choice:hover {
+    background-color:rgb(255, 242, 0);
+    color: rgb(0, 0, 0);
+    transform: scale(1.07);
+    box-shadow: 2px 2px 20px rgb(0, 0, 0);
+}
+.result
+{
+    display: none;
+    text-align: center;
+    font-size: 1.8rem;
+}
+.right , .wrong , .accuracy
+{
+    font-size: 1.25rem;
+    font-style: italic;
+}
+.accuracy
+{
+    color:rgb(255, 242, 0);
+}
+.card-button
+{
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color:#37438c;
+    color: white;
+    margin-top: 30px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: all .3s;
+}
+.card-button:hover
+{
+    background-color:rgb(255, 242, 0);
+    color: black;
+}
+.toast
+{
+    position: absolute;
+    background-color:#5d6269;
+    color: #ffffff;
+    /* color:rgb(178, 234, 11); */
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    border-radius: 5px;
+    top: 20px;
+    left:0px;
+    transition: .8s;
+    box-shadow: 3px 5px 5px 3px #393e46;;
+}
+.toast-hide
+{
+    transform: translateX(-100%);
+}
+.toast::after
+{
+    width: 0;
+    content: "";
+    position: absolute;
+    height: 5px;
+    background-color:rgb(255, 242, 0);
+    left: 0;
+    bottom: 0;
+    animation: reduce 2s linear;
+    animation-fill-mode: forwards;
+}
+.warn
+{
+    position: absolute;
+    background-color:#353a42;
+    color: #ffffff;
+    /* color:rgb(178, 234, 11); */
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    border-radius: 5px;
+    top: 0;
+    left:50%;
+    transform: translateX(-50%) scale(1);
+    transition: 1s;
+    /* box-shadow: 3px 5px 5px 3px #393e46;; */
+}
+.warn-hide
+{
+    transform: translate(-50% , -100%) scale(1) ;
+}
+.warn::after
+{
+    width: 0;
+    content: "";
+    position: absolute;
+    height: 5px;
+    background-color:rgb(234, 11, 11);
+    left: 0;
+    bottom: 0;
+    animation: reduce 4s linear;
+    animation-fill-mode: forwards;
+}
+@keyframes reduce {
+    to{
+        width: 100%;
+    }
+    
+}
+@keyframes shake 
+{
+    0%{
+        transform: translateX(-3px);
+    }
+    30%{
+        transform: translateX(6px);
+    }
+    60%{
+        transform: translateX(-6px);
+    }
+    90%{
+        transform: translateX(6px);
+    }  
+    100%{
+        transform: translateX(0);
+    }    
+}
+/* Utility */
+.accepted
+{
+    color:#25c209;
+    font-weight: 500;
+}
+.invalid
+{
+    color: #ff0000;
+    font-weight: 500;
+}
+.correct
+{
+    background-color: #25c209!important;
+    color: white!important;
+}
+.incorrect
+{
+    background-color: #c80808!important;
+    color: white!important;;
+}
+.blur
+{
+    filter: blur(10px);
+}
+.disable
+{
+    cursor: no-drop;
+}
+.shake
+{
+    animation: shake .2s linear ;
+}

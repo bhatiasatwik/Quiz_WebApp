@@ -1,0 +1,33 @@
+@media screen and (max-width: 770px) {
+    /* Your styles for screens wider than 600 pixels */
+.card
+{
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10vh;
+}
+.toast
+{
+top: 10px;
+padding: 10px;
+z-index: 1;
+}
+.warn
+{
+padding: 10px 10px;
+line-height: 1.8rem;
+z-index: 2;
+}
+#exclamation
+{
+color: red;
+}
+.card
+{
+    border: 1px solid rgb(255, 242, 0);
+}
+.title
+{
+    border-bottom: 3px solid rgb(255, 242, 0);
+}
+}

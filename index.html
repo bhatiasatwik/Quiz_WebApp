@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz_App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+     rel="stylesheet">
+</head>
+<body>
+    <div class="container disable">
+        <div class="popup">
+            <p>Name :</p>
+            <input type="text" placeholder="Enter Full Name" spellcheck="false"><span id="nameEr"></span>
+            <p>email :</p>
+            <input type="email" spellcheck="false" placeholder="Enter correct email"><span id="emailEr"></span>
+            <p>Date of Birth :</p>
+            <input type="date" placeholder="">
+            <button id="start" >Submit Details</button>
+        </div>
+        <div class="card">
+            <div class="title">
+                <h1><span id="head">Quiz Time</span> <span id="exclamation">!</span></h1>
+            </div>
+            <div class="time">10
+                <div class="marker"></div>
+            </div>
+            <div class="quiz">
+                <h2 class="question"></h2>
+                <div class="options">
+                    <button class="choice" id="0"></button>
+                    <button class="choice" id="1"></button>
+                    <button class="choice" id="2"></button>
+                    <button class="choice" id="3"></button>
+                </div>
+            </div>
+            <div class="result">
+                <p>
+                    ...Results Have Arrived...
+                </p>
+                <p class="right accepted">
+                </p>
+                <p class="wrong invalid"></p>
+                <div class="accuracy">
+                </div>
+            </div>
+            <button class="card-button">Next Question</button>
+        </div>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
